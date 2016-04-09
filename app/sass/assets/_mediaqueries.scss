@@ -1,0 +1,11 @@
+///////////////////////////////////////////////////////////////////////////////////////////////
+// Grid/mediaqueries
+// This partial defines the breakpoints for media queries. 
+// More info: http://thoughtbot.github.io/neat-docs/latest/#new-breakpoint
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+// Breakpoints 
+$mobile: new-breakpoint(max-width 480px); 
+$tablet: new-breakpoint(max-width 768px); 
+$desktop: new-breakpoint(min-width 769px);
+$mobile-devices: new-breakpoint(max-device-width 769px);

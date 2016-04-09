@@ -1,0 +1,9 @@
+//Importing global variables
+@import '../../sass/assets/sass.scss';
+
+.page {
+    padding-top: 30px;
+    padding-bottom: 120px;
+    color: #f00;
+    @extend %inline-block;
+}
