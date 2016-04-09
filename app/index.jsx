@@ -6,10 +6,11 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { prismicApi } from './vendor/prismic-es6';
 import DocumentListContainer from './components/DocumentList';
 import Doc from './components/Doc';
+import Main from './components/Main';
 import styles from './sass/global/global.scss';
 
 // Update these 2 constants to point to your repository
-const endpoint = 'http://steph.prismic.io/api';
+const endpoint = 'http://pliskovicparty.prismic.io/api';
 const accessToken = null;
 
 // Also change the linkResolver if you change the URL scheme in the Router below
@@ -50,6 +51,7 @@ class Home extends React.Component {
 }
 
 function DocWrapper(props) {
+	debugger;
   return <Doc params={props.params} endpoint={endpoint} accesstoken={accessToken} linkResolver={linkResolver} />;
 }
 
@@ -60,7 +62,7 @@ function NoMatch(props) {
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Home} />
+      <IndexRoute component={Main} />
       <Route path=":type/:id" component={DocWrapper}/>
       <Route path="*" component={NoMatch}/>
     </Route>

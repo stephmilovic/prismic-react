@@ -1,0 +1,55 @@
+//Importing global variables
+@import '../../sass/assets/sass.scss';
+
+body {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+.header,
+.footer {
+  flex: none; /* 2 */
+}
+
+.footer {
+  background: $footer-bg-color;
+}
+
+.header {
+  background: $header-bg-color;
+}
+
+.nav {
+  order: -1;
+  padding: 1em;
+ // background: $nav-bg-color;
+}
+
+.container {
+  display: flex;
+  flex: 1 0 auto; /* 2 */
+  flex-direction: column;
+}
+
+.content {
+  margin-top: 1.5em;
+}
+
+
+@include media($desktop){
+  .container {
+    flex-direction: row;
+  }
+  .content {
+    flex: 1;
+    padding: 2em;
+    margin: 0;
+  }
+  .nav {
+    flex: 0 0 12em;
+  }
+  .header {
+    padding: 0 1em;
+  }
+}
