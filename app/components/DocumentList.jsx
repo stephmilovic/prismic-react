@@ -24,7 +24,7 @@ export default class DocumentListContainer extends React.Component {
 	}
 
 	componentDidMount() {
-		// debugger;
+		 debugger;
 		// this.props.api.form('everything').ref(this.props.api.master()).submit((err, res) => {
 		// 	this.setState({ docs: res.results });
 		// 	debugger;

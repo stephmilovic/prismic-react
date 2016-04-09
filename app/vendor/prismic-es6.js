@@ -16,6 +16,7 @@ export const prismicApi = (endpoint, accessToken) => {
 };
 
 export const prismicQuery = (api, query, options) => {
+
   return new Promise((resolve, reject) => {
     api.query(query, options || {}, (err, res) => {
       if (err) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Content, Header, Footer } from '../Layout';
-import Cool from '../Cool';
+import Cool from '../Cooler';
 import store from '../../flux/store';
 import actions from '../../flux/actions';
 
@@ -29,7 +29,7 @@ export default class Main extends React.Component {
 				<Header />
 				<Container>
 				<Content>Let's do this shit!!
-					<Cool />
+					<Cool api={this.state.api}/>
 				</Content>
 
 				</Container>

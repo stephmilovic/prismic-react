@@ -1,0 +1,11 @@
+//Importing global variables
+@import '../../sass/assets/sass.scss';
+
+.lage {
+    padding-top: 30px;
+    padding-bottom: 120px;
+    color: $accent-color;
+    @extend %inline-block;
+}
+
+//.hello { @extend %major-btn; }

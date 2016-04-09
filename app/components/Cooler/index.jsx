@@ -13,12 +13,17 @@ export default class Cool extends React.Component {
 		super(props);
 		this.renderDescription = this.renderDescription.bind(this);
 		this.getEventInfo = this.getEventInfo.bind(this);
-		actions.loadEventInfo();
+	//	actions.loadEventInfo();
 		this.state = {
 			doc: null
 		};
 	}
 	componentWillMount() {
+debugger;
+		this.props.api.form('everything').query(Prismic.Predicates.at('document.type', 'event-info')).ref(this.prismicApi.master()).submit((err, res) => {
+			this.eventInfo = res.results[0];
+			this.emit('event_loadEventInfo');
+		});
 		store.on('event_loadEventInfo', this.getEventInfo);
 	}
 
@@ -46,9 +51,6 @@ export default class Cool extends React.Component {
 	}
 }
 // <div dangerouslySetInnerHTML={{__html: this.state.doc.asHtml(linkResolver)}} />
-// Cool.propTypes = {
-// 	params: React.PropTypes.object.isRequired,
-// 	linkResolver: React.PropTypes.func.isRequired,
-// 	endpoint: React.PropTypes.string.isRequired,
-// 	accesstoken: React.PropTypes.string
-// };
+Cool.propTypes = {
+	api: React.PropTypes.object
+};

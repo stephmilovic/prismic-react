@@ -5,13 +5,14 @@ import { Prismic } from 'prismic.io';
 module.exports = flux.createStore({
 	endpoint: 'http://pliskovicparty.prismic.io/api',
 	prismicApi: '',
-	eventInfo: {},
+	eventInfo: '',
 	accessToken: null,
 	actions: [
 		actions.loadPageData,
 		actions.loadEventInfo
 	],
 	loadPageData() {
+
 		return new Promise((resolve, reject) => {
 			Prismic.Api(this.endpoint, (err, api) => {
 				if (err) {
@@ -19,6 +20,7 @@ module.exports = flux.createStore({
 				} else {
 					resolve(api);
 					this.prismicApi = api;
+					this.loadEventInfo();
 					this.emit('event_loadApi');
 				}
 			}, this.accessToken);
@@ -27,11 +29,25 @@ module.exports = flux.createStore({
 	loadEventInfo() {
 		this.prismicApi.form('everything').query(Prismic.Predicates.at('document.type', 'event-info')).ref(this.prismicApi.master()).submit((err, res) => {
 			this.eventInfo = res.results[0];
+			this.emit('event_loadEventInfo');
 		});
-		this.emit('event_loadEventInfo');
+		// const options = undefined;
+		// return new Promise((resolve, reject) => {
+		// 	this.prismicApi.query(Prismic.Predicates.at('document.type', 'event-info'), options || {}, (err, res) => {
+		// 		if (err) {
+		// 			reject(err);
+		// 		} else {
+		// 			resolve(res);
+		// 			debugger;
+		// 			this.eventInfo = res.results[0];
+		// 			this.emit('event_loadEventInfo');
+		// 		}
+		// 	});
+		// });
 	},
 	exports: {
 		getPrismicApi() {
+			debugger;
 			return this.prismicApi;
 		},
 		getEventInfo() {

@@ -51,7 +51,6 @@ class Home extends React.Component {
 }
 
 function DocWrapper(props) {
-	debugger;
   return <Doc params={props.params} endpoint={endpoint} accesstoken={accessToken} linkResolver={linkResolver} />;
 }
 
