@@ -1,25 +1,18 @@
 import React from 'react';
 import { Container, Content, Header, Footer } from '../Layout';
-import Cool from '../Cooler';
-import store from '../../flux/store';
-import actions from '../../flux/actions';
+import EventInfo from '../Cooler';
+import { prismicApi } from '../../vendor/prismic-es6';
+
+const endpoint = 'http://pliskovicparty.prismic.io/api';
 
 export default class Main extends React.Component {
 	constructor(props) {
 		super(props);
-		this.getApi = this.getApi.bind(this);
 		this.state = { api: null };
-		actions.loadPageData();
 	}
-	componentWillMount() {
-		store.on('event_loadApi', this.getApi);
+	componentDidMount() {
+		prismicApi(endpoint).then((api) => this.setState({ prismicApi: api }));
 	}
-	getApi() {
-		this.setState({
-			api: store.getPrismicApi()
-		});
-	}
-
 	render() {
 		if (!this.state.api) {
 			return (<div>Loading...</div>);
@@ -28,9 +21,9 @@ export default class Main extends React.Component {
 			<div>
 				<Header />
 				<Container>
-				<Content>Let's do this shit!!
-					<Cool api={this.state.api}/>
-				</Content>
+					<Content>Let's do this shit!!
+						<EventInfo api={this.state.prismicApi} />
+					</Content>
 
 				</Container>
 				<Footer />

@@ -31,23 +31,9 @@ module.exports = flux.createStore({
 			this.eventInfo = res.results[0];
 			this.emit('event_loadEventInfo');
 		});
-		// const options = undefined;
-		// return new Promise((resolve, reject) => {
-		// 	this.prismicApi.query(Prismic.Predicates.at('document.type', 'event-info'), options || {}, (err, res) => {
-		// 		if (err) {
-		// 			reject(err);
-		// 		} else {
-		// 			resolve(res);
-		// 			debugger;
-		// 			this.eventInfo = res.results[0];
-		// 			this.emit('event_loadEventInfo');
-		// 		}
-		// 	});
-		// });
 	},
 	exports: {
 		getPrismicApi() {
-			debugger;
 			return this.prismicApi;
 		},
 		getEventInfo() {
