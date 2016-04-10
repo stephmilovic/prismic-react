@@ -44,6 +44,7 @@ let Config = {
       }, {
         test: /(\.scss|\.css)$/,
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass?sourceMap&' + sassNeatPaths),
+      //	include: /flexboxgrid/,
       }, {
         test: /\.svg$/,
         loader: 'file-loader',

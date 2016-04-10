@@ -11,11 +11,6 @@ export const Content = (props) =>
     {props.children}
   </main>;
 
-export const Nav = (props) =>
-  <nav className={styles.nav}>
-    {props.children}
-  </nav>;
-
 export const Header = (props) =>
   <header className={styles.header}>
     {props.children}
@@ -31,10 +26,6 @@ Container.propTypes = {
 };
 
 Content.propTypes = {
-  children: PropTypes.node
-};
-
-Nav.propTypes = {
   children: PropTypes.node
 };
 

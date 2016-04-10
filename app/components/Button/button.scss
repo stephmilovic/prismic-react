@@ -13,6 +13,9 @@ button {
   cursor: pointer; 
   line-height: normal;
   user-select: none;
+  &:focus {
+	  outline: none;
+	}
 }
 
 button[disabled] {
@@ -25,23 +28,21 @@ button::-moz-focus-inner {
 }
 
 .major {
-	padding: 15px 80px;
-	background: $major-btn-color;
+	padding: 22px 80px 14px;
 	font-size: $large-font-size;
- 	color: $light-font-color;
-	font-family: $accent-font-family;
+ 	color: $major-btn-color;
 	text-transform: uppercase;
-	border-radius: $base-border-radius;
+	border: 2px solid $major-btn-border-color;
 	transition: all 200ms ease-in-out;
 	&:hover {
-		background: $major-btn-color-hover;
+		background: $major-btn-border-color;
+		color: $major-btn-color-hover;
 	}
 }
 
 
 .minor {
  	color: $light-font-color;
-	font-family: $accent-font-family;	
 	padding: 10px 20px;
 	background: $minor-btn-color;
 	border-radius: $base-border-radius;

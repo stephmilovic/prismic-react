@@ -1,0 +1,307 @@
+//Importing global variables
+@import '../../sass/assets/sass.scss';
+
+.animate {
+  width: 100%;
+  overflow: hidden;
+  canvas { z-index: 0; }
+}
+
+.contain {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+}
+
+.button {
+	margin-bottom: 3em;
+	animation: button 3.2s ease-in-out ;
+}
+
+//
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800,300);
+
+.frame {
+  align-self: center;
+  position: relative;
+  width: 575px;
+  height: 233px;
+	overflow: hidden;
+  color: #fff;
+	//font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.circle {
+	position: absolute;
+	z-index: 10;
+	height: 50px;
+	width: 50px;
+	top: 93px;
+	left: 265px;
+	background: #fff;
+	border-radius: 50%;
+	animation: circle 1s ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+.line {
+	position: absolute;
+	z-index: 10;
+	width: 198px;
+	height: 4px;
+	top: 115.5px;
+	background: #fff;
+	transform: scaleX(0);
+}
+
+.lineLeft {
+	composes: line;
+	left: 8px;
+	transform-origin: 100% 50%;
+	animation: lines 1s ease-in-out .8s, line-left 1s steps(1) .8s;
+}
+
+.lineRight {
+	composes: line;
+	right: 8px;
+	transform-origin: 0% 50%;
+	animation: lines 1s ease-in-out .8s, line-right 1s steps(1) .8s;
+}
+
+.bracket {
+	position: absolute;
+	z-index: 10;
+	height: 170px;
+	width: 4px;
+	top: 32px;
+	background: #fff;
+	animation: bracket .4s ease-out 1.7s;
+	animation-fill-mode: both;
+	
+	&:before, &:after {
+		position: absolute;
+		display: block;
+		content: '';
+		width: 25px;
+		height: 4px;
+		background: #fff;
+	}
+}
+
+.bracketLeft {
+	composes: bracket;
+	left: 5px;
+	&:before {
+		top: 0;
+		left: 0;
+		transform-origin: 0% 50%;
+		animation: bracket-line .2s ease-out 2.1s;
+		animation-fill-mode: both;
+	}
+	
+	&:after {
+		bottom: 0;
+		left: 0;
+		transform-origin: 0% 50%;
+		animation: bracket-line .2s ease-out 2.1s;
+		animation-fill-mode: both;
+	}
+	
+}
+
+.bracketRight {
+	composes: bracket;
+	right: 5px;
+	&:before {
+		top: 0;
+		right: 0;
+		transform-origin: 100% 50%;
+		animation: bracket-line .2s ease-out 2.1s;
+		animation-fill-mode: both;
+	}
+	
+	&:after {
+		bottom: 0;
+		right: 0;
+		transform-origin: 100% 50%;
+		animation: bracket-line .2s ease-out 2.1s;
+		animation-fill-mode: both;
+	}
+	
+}
+
+.big {
+	position: absolute;
+	z-index: 5;
+	top: 54px;
+	width: 575px;
+	text-align: center;
+	font-weight: 800;
+	font-size: 90px;
+	color: #FFFFFF;
+	line-height: 75px;
+	text-transform: uppercase;
+	animation: reveal .4s ease-out 1.7s;
+	animation-fill-mode: both;
+}
+
+// .hide {
+// 	position: absolute;
+// 	z-index: 7;
+// 	width: 575px;
+// 	height: 50px;
+// 	background: #E16D6C;
+// 	left: 0;
+// 	animation: reveal .4s ease-out 1.7s;
+// 	animation-fill-mode: both;
+// }
+
+// .hideTop {
+// 	composes: hide;
+// 	bottom: 49%;
+// 	transform-origin: 50% 0%;
+// }
+
+// .hideBottom {
+// 	composes: hide;
+// 	top: 49%;
+// 	transform-origin: 50% 100%;
+// }
+
+.small {
+	position: absolute;
+	z-index: 10;
+	width: 575px;
+	text-align: center;
+	left: 0;
+	font-weight: 300;
+	font-size: 40px;
+	color: #FFFFFF;
+	line-height: 40px;
+	text-transform: uppercase;
+}
+
+.smallTop {
+	composes: small;
+	top: 0;
+	animation: small-top .5s ease-out 2.2s;
+	animation-fill-mode: both;
+}
+
+.smallBottom {
+	composes: small;
+	bottom: -9px;
+	animation: small-bottom .5s ease-out 2.2s;
+	animation-fill-mode: both;
+}
+
+@keyframes circle {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	90%, 100% {
+		transform: scale(0);
+	}
+}
+
+@keyframes lines {
+	0% {
+		transform: scaleX(0);
+	}
+	50% {
+		transform: scaleX(1);
+	}
+	100% {
+		transform: scaleX(0);
+	}
+}
+
+@keyframes line-left {
+	0% {
+		transform-origin: 100% 50%;
+	}
+	50%, 100% {
+		transform-origin: 0% 50%;
+	}
+}
+
+@keyframes line-right {
+	0% {
+		transform-origin: 0% 50%;
+	}
+	50%, 100% {
+		transform-origin: 100% 50%;
+	}
+}
+
+@keyframes bracket {
+	0% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}
+
+@keyframes bracket-line {
+	0% {
+		transform: scaleX(0);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes reveal {
+	0% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}
+
+@keyframes small-top {
+	0% {
+		transform: translateX(-20px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes small-bottom {
+	0% {
+		transform: translateX(20px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes button {
+	0% {
+		transform: scaleY(0);
+	}
+	92% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}

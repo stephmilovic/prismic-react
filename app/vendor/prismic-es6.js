@@ -2,8 +2,10 @@ import { Prismic } from 'prismic.io';
 const { Predicates } = Prismic;
 
 // Wrap Prismic calls in promises
+const endpoint = 'http://pliskovicparty.prismic.io/api';
+const accessToken = null;
 
-export const prismicApi = (endpoint, accessToken) => {
+export const prismicApi = () => {
   return new Promise((resolve, reject) => {
     Prismic.Api(endpoint, (err, api) => {
       if (err) {

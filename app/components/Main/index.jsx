@@ -1,30 +1,39 @@
 import React from 'react';
 import { Container, Content, Header, Footer } from '../Layout';
-import EventInfo from '../Cooler';
+import EventInfo from '../EventInfo';
+import HeaderContent from '../HeaderContent';
+import AnimatedHeader from '../AnimatedHeader2';
 import { prismicApi } from '../../vendor/prismic-es6';
-
-const endpoint = 'http://pliskovicparty.prismic.io/api';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 export default class Main extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { api: null };
+		this.state = { prismicApi: null };
 	}
-	componentDidMount() {
-		prismicApi(endpoint).then((api) => this.setState({ prismicApi: api }));
+	componentWillMount() {
+		prismicApi().then((api) => this.setState({ prismicApi: api }));
 	}
 	render() {
-		if (!this.state.api) {
+		if (!this.state.prismicApi) {
 			return (<div>Loading...</div>);
 		}
 		return (
 			<div>
-				<Header />
+				<Header>
+					<HeaderContent />
+				</Header>
 				<Container>
-					<Content>Let's do this shit!!
-						<EventInfo api={this.state.prismicApi} />
-					</Content>
-
+					<AnimatedHeader />
+					<Grid>
+						<Col xs={12}>
+							<Row center="xs">
+								<Col xs={6}>
+									<EventInfo api={this.state.prismicApi} />
+								</Col>
+							</Row>
+						</Col>
+					</Grid>
 				</Container>
 				<Footer />
 			</div>

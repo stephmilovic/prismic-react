@@ -1,0 +1,18 @@
+//Importing global variables
+@import '../../sass/assets/sass.scss';
+
+.navigation {
+	display: block;
+	padding: 0;
+	text-align: center;
+	cursor: pointer;
+	margin: 1em 0;
+	li {
+		display: inline;
+		margin: 10px;
+		text-decoration: none;
+		color: $light-font-color;
+		font-weight: 400;
+		text-shadow: #000 0 0 0;
+	}
+}

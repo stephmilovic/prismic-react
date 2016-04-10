@@ -11,8 +11,8 @@
 
 
 // Typography
-$sans-serif:        			'Questrial', sans-serif;
-$serif: 	        				'Sanchez', serif;
+$sans-serif:        			'Josefin Sans', sans-serif;
+$serif: 	        				'Playfair Display', serif;
 $base-font-family: 				$sans-serif;
 $accent-font-family: 			$serif;
 $heading-font-family:			$accent-font-family;
@@ -44,14 +44,14 @@ $green:                 	#17ab41;
 $red:                   	#e4342b;
 $yellow:                	#f9c62d;
 $orange:                	#ff8a00;
-$pink:                 	 	#c3325f;
+$pink:                 	 	#FFBCB7;
 $purple:                	#33385d;
 $navy:                  	#35414d;
 $teal:										#37b9ac;
 
 // Grays 	
 $gray:                 		#666; 
-$gray-dark: 							#444;
+$gray-dark: 							#383838;
 $gray-medium: 						#ccc;
 $gray-light: 							#7b7570;
 $gray-lighter:          	#bfbfbf;
@@ -66,7 +66,7 @@ $accent-color:						$orange;
 
 // Background Colors
 $base-bg-color: 					$off-white;
-$header-bg-color: 				$white;
+$header-bg-color: 				$gray-dark;
 $footer-bg-color: 				$gray-dark;
 $wrapper-bg-color: 				$white;
 $popup-bg-color: 					$white;			// use for any background of something that is overlaid on page (popups, modals, tooltips)
@@ -85,8 +85,8 @@ $footer-link-color:				$white;
 $footer-link-color-hover:	$white;
 
 // Button Colors
-$major-btn-color: 				$blue-dark;
-$major-btn-color-hover:		darken($major-btn-color, 10);
+$major-btn-color: 				$white;
+$major-btn-color-hover:		$pink;
 $major-btn-border-color: 	$major-btn-color;
 
 $minor-btn-color: 				$accent-color;

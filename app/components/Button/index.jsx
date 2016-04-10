@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import styles from './button.scss';
 
-export const Button = (props) =>
+const Button = (props) =>
   <button type={props.type} className={styles[props.cbStyle]}>{props.label}</button>;
 
 Button.propTypes = {
@@ -10,3 +10,5 @@ Button.propTypes = {
   cbStyle: PropTypes.oneOf(['major', 'minor', 'submit']).isRequired,
   children: PropTypes.node
 };
+
+export default Button;
