@@ -153,29 +153,6 @@
 	animation-fill-mode: both;
 }
 
-// .hide {
-// 	position: absolute;
-// 	z-index: 7;
-// 	width: 575px;
-// 	height: 50px;
-// 	background: #E16D6C;
-// 	left: 0;
-// 	animation: reveal .4s ease-out 1.7s;
-// 	animation-fill-mode: both;
-// }
-
-// .hideTop {
-// 	composes: hide;
-// 	bottom: 49%;
-// 	transform-origin: 50% 0%;
-// }
-
-// .hideBottom {
-// 	composes: hide;
-// 	top: 49%;
-// 	transform-origin: 50% 100%;
-// }
-
 .small {
 	position: absolute;
 	z-index: 10;
@@ -201,6 +178,26 @@
 	bottom: -9px;
 	animation: small-bottom .5s ease-out 2.2s;
 	animation-fill-mode: both;
+}
+
+@include media( new-breakpoint(max-width 600px)){
+	.frame {
+	  width: 320px;
+	  height: 170px;
+	}
+	.big {
+		font-size: 50px;
+		width: 320px;
+		line-height: 44px;
+	}
+	.small {
+		font-size: 30px;
+		width: 320px;
+		line-height: 43px;
+	}
+	.bracketLeft, .bracketRight {
+		height: 115px;
+	}
 }
 
 @keyframes circle {
