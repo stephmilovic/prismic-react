@@ -32,14 +32,15 @@ button::-moz-focus-inner {
 	font-size: $large-font-size;
  	color: $major-btn-color;
 	text-transform: uppercase;
+	@include background-opacity($base-bg-color, 0.7);
 	border: 2px solid $major-btn-border-color;
 	transition: all 200ms ease-in-out;
+	font-weight: bold;
 	&:hover {
-		background: $major-btn-border-color;
-		color: $major-btn-color-hover;
+		background: $major-btn-color;
+		color: $white;
 	}
 }
-
 
 .minor {
  	color: $light-font-color;

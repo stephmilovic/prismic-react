@@ -1,0 +1,60 @@
+//Importing global variables
+@import '../../sass/assets/sass.scss';
+
+.row {
+	margin: 2em 0;
+}
+
+.welcome, .counter {
+	flex: 1 1 auto;
+}
+
+.welcome {
+	background: $wrapper-bg-color;
+	margin-right: 5px;
+	p {
+    color: $base-font-color;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2em;
+    line-height: 31px;
+    margin: 0;
+    letter-spacing: .04em;
+  	padding: 20px;
+    background: $wrapper-bg-color;
+	}
+}
+
+.counter {
+	background: $pink;
+	p {
+		padding: 10px 0 6px;
+		color: $white;
+		border-bottom: 4px solid $white;
+		text-align: center;
+		font-weight: bold;
+		margin-bottom: 15px;
+	}
+	h3 {
+		color: $white;
+		font-size: 2em
+	}
+}
+
+@include media (new-breakpoint(max-width 555px)) {
+	.welcome, .counter {
+		max-width: 100%;
+	}
+}
+
+@include media ($tablet) {
+	.welcome {
+		margin: 0 0 0 10px;
+	}
+}
+
+@include media ($mobile) {
+	.welcome {
+		margin: 0 0 10px 0;
+	}
+}

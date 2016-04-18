@@ -1,9 +1,12 @@
 //Importing global variables
 @import '../../sass/assets/sass.scss';
 
+$heading-color: $teal;
+$animation-color: $primary-color;
 .animate {
   width: 100%;
   overflow: hidden;
+  margin-bottom: 2em;
   canvas { z-index: 0; }
 }
 
@@ -21,7 +24,7 @@
 
 .button {
 	margin-bottom: 3em;
-	animation: button 3.2s ease-in-out ;
+	animation: button 3s ease-in-out ;
 }
 
 //
@@ -33,7 +36,9 @@
   width: 575px;
   height: 233px;
 	overflow: hidden;
-  color: #fff;
+	animation: showbg 1.7s ease-in 0s;
+  color: $heading-color;
+  @include background-opacity($base-bg-color, 0.5);
 	//font-family: 'Open Sans', Helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -45,8 +50,8 @@
 	height: 50px;
 	width: 50px;
 	top: 93px;
-	left: 265px;
-	background: #fff;
+	left: 262px;
+	background: $animation-color;
 	border-radius: 50%;
 	animation: circle 1s ease-in-out;
 	animation-fill-mode: forwards;
@@ -56,9 +61,9 @@
 	position: absolute;
 	z-index: 10;
 	width: 198px;
-	height: 4px;
+	height: 3px;
 	top: 115.5px;
-	background: #fff;
+	background: $animation-color;
 	transform: scaleX(0);
 }
 
@@ -80,9 +85,9 @@
 	position: absolute;
 	z-index: 10;
 	height: 170px;
-	width: 4px;
+	width: 3px;
 	top: 32px;
-	background: #fff;
+	background: $animation-color;
 	animation: bracket .4s ease-out 1.7s;
 	animation-fill-mode: both;
 	
@@ -91,8 +96,8 @@
 		display: block;
 		content: '';
 		width: 25px;
-		height: 4px;
-		background: #fff;
+		height: 3px;
+		background: $animation-color;
 	}
 }
 
@@ -140,17 +145,15 @@
 
 .big {
 	position: absolute;
-	z-index: 5;
 	top: 54px;
 	width: 575px;
 	text-align: center;
 	font-weight: 800;
 	font-size: 90px;
-	color: #FFFFFF;
+	color: $heading-color;
 	line-height: 75px;
 	text-transform: uppercase;
-	animation: reveal .4s ease-out 1.7s;
-	animation-fill-mode: both;
+	animation: show 1.7s ease-out 0s;
 }
 
 .small {
@@ -161,7 +164,7 @@
 	left: 0;
 	font-weight: 300;
 	font-size: 40px;
-	color: #FFFFFF;
+	color: $heading-color;
 	line-height: 40px;
 	text-transform: uppercase;
 }
@@ -178,6 +181,28 @@
 	bottom: -9px;
 	animation: small-bottom .5s ease-out 2.2s;
 	animation-fill-mode: both;
+}
+
+.hide {
+	position: absolute;
+	z-index: 7;
+	width: 570px;
+	height: 86px;
+	@include background-opacity($base-bg-color, 1);
+	left: 0;
+	animation: reveal .4s ease-out 1.7s, show 1.7s ease-out 0s;
+	animation-fill-mode: both;
+}
+.hideTop {
+	composes: hide;
+	bottom: 49%;
+	transform-origin: 50% 0%;
+}
+
+.hideBottom {
+	composes: hide;
+	top: 49%;
+	transform-origin: 50% 100%;
 }
 
 @include media( new-breakpoint(max-width 600px)){
@@ -259,13 +284,40 @@
 		transform: scaleX(1);
 	}
 }
-
-@keyframes reveal {
+@keyframes showbg {
 	0% {
-		transform: scaleY(0);
+		@include background-opacity($base-bg-color, 0);
+	}
+	20% {
+		@include background-opacity($base-bg-color, 0);
+	}
+	48% {
+		@include background-opacity($base-bg-color, 0.7);
 	}
 	100% {
+		@include background-opacity($base-bg-color, 0.7);
+	}
+}
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+	52% {
+		opacity: 0;
+	}
+	53% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes reveal {
+	0% {
 		transform: scaleY(1);
+	}
+	100% {
+		transform: scaleY(0);
 	}
 }
 

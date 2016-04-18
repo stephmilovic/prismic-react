@@ -40,14 +40,16 @@ $base-line-height: 				1.5em;
 // Colors
 $blue: 										#007285;
 $blue-dark:								#35889d;
-$green:                 	#17ab41;
+$green:                	#c1f2e6;
+$seafoam:                	#c1f2e6;
 $red:                   	#e4342b;
 $yellow:                	#f9c62d;
 $orange:                	#ff8a00;
-$pink:                 	 	#FFBCB7;
+$pink:                 	 	#ffd8d8;
+$pink-blush:           	 	#ffebe8;
 $purple:                	#33385d;
 $navy:                  	#35414d;
-$teal:										#37b9ac;
+$teal:										#007f8f;
 
 // Grays 	
 $gray:                 		#666; 
@@ -58,15 +60,15 @@ $gray-lighter:          	#bfbfbf;
 $gray-lightest:         	#f2f2f2;
 $black:                	 	#000;
 $white:                 	#fff;
-$off-white:								#f7f7f7;
+$off-white:								#f5f5f5;
 
 // Main Colors
-$primary-color:						$blue;
-$accent-color:						$orange;
+$primary-color:						$seafoam;
+$accent-color:						$pink-blush;
 
 // Background Colors
 $base-bg-color: 					$off-white;
-$header-bg-color: 				$gray-dark;
+$header-bg-color: 				$accent-color;
 $footer-bg-color: 				$gray-dark;
 $wrapper-bg-color: 				$white;
 $popup-bg-color: 					$white;			// use for any background of something that is overlaid on page (popups, modals, tooltips)
@@ -79,14 +81,13 @@ $heading-font-color: 			$gray-dark;
 $footer-font-color: 			$white;
 
 // Link Colors
-$base-link-color: 				$primary-color;
-$base-link-color-hover: 	$accent-color;
-$footer-link-color:				$white;
+$base-link-color: 				lighten($teal, 10);
+$base-link-color-hover: 	$teal;
 $footer-link-color-hover:	$white;
 
 // Button Colors
-$major-btn-color: 				$white;
-$major-btn-color-hover:		$pink;
+$major-btn-color: 				$teal;
+$major-btn-color-hover:		$primary-color;
 $major-btn-border-color: 	$major-btn-color;
 
 $minor-btn-color: 				$accent-color;

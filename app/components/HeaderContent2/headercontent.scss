@@ -1,0 +1,82 @@
+//Importing global variables
+@import '../../sass/assets/sass.scss';
+
+$zig: $primary-color;
+$bg: transparent;
+$bg-color: $base-bg-color;
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.bordered {
+  position: relative;
+  width: 100%;
+  padding: 1em 0;
+  background: $base-bg-color;
+}
+
+.bordered:before, .bordered:after {
+  content: '';
+  position: absolute;
+  background-repeat: repeat;
+  z-index: 1;
+}
+
+.bordered:before {
+  @include background(
+    linear-gradient(135deg, $bg, $bg  75%, $bg-color 75%, $bg-color),
+    linear-gradient(225deg, $bg, $bg  75%, $bg-color 75%, $bg-color),
+    linear-gradient(45deg, $bg, $bg  75%, $bg-color 75%, $bg-color),
+    linear-gradient(315deg, $zig, $zig  75%, $bg-color 75%, $bg-color)
+  );
+  background-position: 0.4em 0.4em, 0.4em 0.4em, 0 0.4em, 0 0.4em;
+  background-size: 15px 8px;
+  left: 0;
+  top: 28%;
+  height: 1em;
+  width: 100%;
+  background-repeat-y: no-repeat;
+}
+
+.bordered:after {
+  @include background(
+    linear-gradient(135deg, $bg, $bg  75%, $bg-color 75%, $bg-color),
+    linear-gradient(225deg, $bg, $bg  75%, $bg-color 75%, $bg-color),
+    linear-gradient(45deg, $bg, $bg  75%, $bg-color 75%, $bg-color),
+    linear-gradient(315deg, $zig, $zig  75%, $bg-color 75%, $bg-color)
+  );
+  background-position: 0.4em 0.4em, 0.4em 0.4em, 0 0.4em, 0 0.4em;
+  background-size: 15px 8px;
+  left: 0;
+  top: 39%;
+  height: 1em;
+  width: 100%;
+  background-repeat-y: no-repeat;
+}
+.navContainer {
+	z-index: 10;
+}
+.navigation {
+  text-align: center;
+  line-height: 2.5em;
+  background: $bg-color;
+  font-weight: normal;
+  list-style: none;
+  display: block;
+  padding: 0;
+  text-align: center;
+  li {
+  	display: inline;
+  	margin: 10px;
+  	text-decoration: none;
+  	color: $gray-light;
+  	font-weight: 400;
+  	text-shadow: #000 0 0 0;
+  } 
+  a {
+  	cursor: pointer;
+  }
+}

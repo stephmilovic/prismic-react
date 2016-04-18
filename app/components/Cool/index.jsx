@@ -29,7 +29,6 @@ export default class Cool extends React.Component {
 		});
 	}
 	renderDescription(doc) {
-		debugger;
 		const html = doc.getStructuredText('event-info.description').asHtml();
 		// return <div dangerouslySetInnerHTML={{ __html: html }} />;
 	}

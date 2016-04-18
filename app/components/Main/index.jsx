@@ -1,8 +1,11 @@
 import React from 'react';
 import { Container, Content, Header, Footer } from '../Layout';
 import EventInfo from '../EventInfo';
-import HeaderContent from '../HeaderContent';
-import AnimatedHeader from '../AnimatedHeader2';
+import Brides from '../Brides';
+import Intro from '../Intro';
+import Proposal from '../Proposal';
+import HeaderContent from '../HeaderContent2';
+import AnimatedHeader from '../AnimatedHeader';
 import { prismicApi } from '../../vendor/prismic-es6';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
@@ -20,19 +23,15 @@ export default class Main extends React.Component {
 		}
 		return (
 			<div>
-				<Header>
-					<HeaderContent />
-				</Header>
 				<Container>
 					<AnimatedHeader />
+					<HeaderContent />
 					<Grid>
-						<Col xs={12}>
-							<Row center="xs">
-								<Col xs={6}>
-									<EventInfo api={this.state.prismicApi} />
-								</Col>
-							</Row>
-						</Col>
+						<Content>
+							<div className="wedSection intro"><Intro api={this.state.prismicApi} /></div>
+							<div className="wedSection brides"><Brides api={this.state.prismicApi} /></div>
+							<div className="wedSection proposal"><Proposal api={this.state.prismicApi} /></div>
+						</Content>
 					</Grid>
 				</Container>
 				<Footer />

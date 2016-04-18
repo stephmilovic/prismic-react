@@ -7,7 +7,7 @@ export const Container = (props) =>
   </div>;
 
 export const Content = (props) =>
-  <main className={styles.content}>
+  <main className={styles.content} id="main">
     {props.children}
   </main>;
 

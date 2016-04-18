@@ -18,7 +18,7 @@ body {
 
 .header {
   position: fixed;
-  top: 0;
+  bottom: -50px;
   left: 0;
   width: 100%;
   height: 63px;
@@ -39,12 +39,18 @@ body {
   margin-top: 1.5em;
 }
 
+@include media($tablet){
+	.content {
+		padding: 0 10px;
+	}
+}
+
 
 @include media($desktop){
   .content {
     flex: 1;
-    padding: 2em;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 960px;
   }
   .nav {
     flex: 0 0 12em;

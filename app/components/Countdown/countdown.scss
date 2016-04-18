@@ -1,0 +1,34 @@
+//Importing global variables
+@import '../../sass/assets/sass.scss';
+.col {
+	padding: 0 2px;
+	&:first-of-type {
+		padding-left: 5px;
+	}
+	&:last-of-type {
+		padding-right: 5px;
+	}
+}
+.flex {
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.timeBox {
+	font-size: 24px;
+	color: desaturate(darken($pink, 9), 8);
+	background: $pink-blush;
+	font-weight: 300;
+	text-align: center;
+	padding: 16px 0 11px;
+}
+
+.timeType {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	line-height: 150%;
+	color: $white;
+}
