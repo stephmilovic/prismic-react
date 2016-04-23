@@ -29,7 +29,7 @@ export default class Main extends React.Component {
 					<Grid>
 						<Content>
 							<div className="wedSection intro"><Intro api={this.state.prismicApi} /></div>
-							<div className="wedSection brides"><Brides api={this.state.prismicApi} /></div>
+							<div className="wedSection intro"><Brides api={this.state.prismicApi} /></div>
 							<div className="wedSection proposal"><Proposal api={this.state.prismicApi} /></div>
 						</Content>
 					</Grid>
